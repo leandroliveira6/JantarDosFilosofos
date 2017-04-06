@@ -15,7 +15,7 @@ import static javafx.application.Platform.exit;
  * @author Leandro
  */
 public class Filosofo implements Runnable {
-    private static final Semaphore SEMAFORO[] = new Semaphore[5];
+    private static final Semaphore SEMAFORO[] = new Semaphore[Main.QUANTIDADE_MAXIMA];
     private static final Object MUTEX_ESTADO = new Object();
     private static ArrayList<Filosofo> filosofos;
     private static boolean terminar;
