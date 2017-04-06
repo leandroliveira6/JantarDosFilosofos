@@ -27,7 +27,6 @@ public class Main {
             tarefas.add(t);
             t.start();
         }
-        
         for(int i=0; i<20; i++){
             System.out.println("\nTABELA DE ESTADOS:");
             for(int j=0; j<QUANTIDADE_MAXIMA; j++){
@@ -37,7 +36,6 @@ public class Main {
             sleep(1000);
         }
         Filosofo.terminar();
-        
         System.out.println("Main Encerrada!");
     }
 }
