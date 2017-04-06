@@ -37,8 +37,7 @@ public class Filosofo implements Runnable {
         if(filosofos == null){
             filosofos = new ArrayList();
             for(int i=0; i < Main.QUANTIDADE_MAXIMA; i++){
-                Filosofo f = new Filosofo();
-                filosofos.add(f);
+                filosofos.add(new Filosofo());
                 SEMAFORO[i] = new Semaphore(0); 
             }
             if(filosofos.size() == Main.QUANTIDADE_MAXIMA){
@@ -156,11 +155,7 @@ public class Filosofo implements Runnable {
         
         return "G"+g1s+"\t F"+fs+"\t G"+g2s;
     }
-    
-    public String getNome(){
-        return nome;
-    }
-    
+        
     public static void terminar(){
         terminar = true;
     }

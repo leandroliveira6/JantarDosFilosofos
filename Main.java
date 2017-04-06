@@ -13,19 +13,19 @@ import java.util.ArrayList;
  * @author Leandro
  */
 public class Main {
-    private static ArrayList<Thread> listaDeTarefas;
+    private static ArrayList<Thread> tarefas;
     public static final int QUANTIDADE_MAXIMA = 5;
     
     public static void main(String[] args) throws InterruptedException{
         Garfo.instanciarGarfos();
         Filosofo.instanciarFilosofos();
         
-        listaDeTarefas = new ArrayList();
+        tarefas = new ArrayList();
         for(int i=0; i<Main.QUANTIDADE_MAXIMA; i++){
             Filosofo f = Filosofo.getFilosofo(i);
-            listaDeTarefas.add(new Thread(f));
-            listaDeTarefas.get(i).setName(f.getNome());
-            listaDeTarefas.get(i).start();
+            Thread t = new Thread(f);
+            tarefas.add(t);
+            t.start();
         }
         
         for(int i=0; i<20; i++){
@@ -37,6 +37,7 @@ public class Main {
             sleep(1000);
         }
         Filosofo.terminar();
+        
         System.out.println("Main Encerrada!");
     }
 }
